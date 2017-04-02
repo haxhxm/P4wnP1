@@ -55,7 +55,7 @@ function onNetworkUp()
         iptables -t nat -A PREROUTING -i $active_interface -p udp -m addrtype ! --dst-type MULTICAST,BROADCAST,LOCAL -j REDIRECT
 
 	#start responder in screen
-        screen -dmS responder bash -c "cd $wdir/Responder/; python Responder.py -I $active_interface -f -v -w -F"
+        #screen -dmS responder bash -c "cd $wdir/Responder/; python Responder.py -I $active_interface -f -v -w -F"
 
 	touch /tmp/responder_started
 
